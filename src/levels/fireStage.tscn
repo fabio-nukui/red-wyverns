@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/actors/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/background.png" type="Texture" id=3]
+[ext_resource path="res://assets/fireStageBG.png" type="Texture" id=4]
+
+[node name="Test level" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [ 2887.0, 4257.79 ],
+"_edit_vertical_guides_": [ 4264.0 ]
+}
+
+[node name="background" type="TextureRect" parent="."]
+anchor_right = 1.0332
+anchor_bottom = 1.0
+margin_left = -32.0
+margin_top = -32.0
+margin_right = 8621.0
+margin_bottom = 8621.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fireStageBG" type="TextureRect" parent="background"]
+anchor_left = 0.000163475
+anchor_right = 1.03336
+anchor_bottom = 1.0
+margin_left = 1500.39
+margin_top = 4442.42
+margin_right = 1500.39
+margin_bottom = 4442.42
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1531.76, 3760.88 )
+scale = Vector2( 0.33, 0.33 )
+gravity = 1000.0
+stomp_impulse = 1000.0
+
+[node name="Camera2D" parent="Player" index="2"]
+position = Vector2( 0, -481.818 )
+limit_right = 4260
+limit_bottom = 4260
+
+[node name="fireStageArea" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="fireStageArea"]
+position = Vector2( 2.66968, 2.66968 )
+polygon = PoolVector2Array( 1669.42, 3221.68, 1474.45, 3775.42, 4200.12, 3775.49, 4194.76, 2577.47, 4264.06, 2576.06, 4264.41, 4266, 1268.05, 4262.4, 1248.3, 2870.8, 3924.68, 2603.69, 3922.16, 3117.42, 1396.95, 3134.35, 1426.57, 3308.93 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="fireStageArea/CollisionPolygon2D"]
+position = Vector2( -6.35693, -12.7139 )
+polygon = PoolVector2Array( 1966.4, 2743.56, 4195.51, 2527.43, 2174.06, 2302.82, 1940.97, 2470.22 )
+
+[editable path="Player"]
