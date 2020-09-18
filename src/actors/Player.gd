@@ -22,9 +22,10 @@ func _physics_process(delta: float) -> void:
 		is_gravity_enabled = not is_gravity_enabled
 	if is_gravity_enabled:
 		_velocity.y += gravity * delta
+	
 	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
 	_velocity = move_and_slide(_velocity, Vector2.UP)
-	
+
 	set_animation()
 
 
@@ -61,7 +62,8 @@ func calculate_stomp_velocity(linear_velocity: Vector2, impulse: float) -> Vecto
 	
 
 func set_animation():
-	$PlayerAnimation.flip_h = _velocity.x < 0
+	if _velocity.x != 0:
+		$PlayerAnimation.flip_h = _velocity.x < 0
 	if _jumping:
 		$PlayerAnimation.play("Jump")
 	else:
