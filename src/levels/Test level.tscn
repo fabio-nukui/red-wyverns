@@ -1,0 +1,103 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/actors/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/tileset.png" type="Texture" id=2]
+[ext_resource path="res://assets/background.png" type="Texture" id=3]
+[ext_resource path="res://assets/fireStageBG.png" type="Texture" id=4]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 0, 0, 80, 0, 80, 80, 0, 80 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 80, 0, 80, 0, 80, 80, 0, 80 )
+
+[sub_resource type="TileSet" id=3]
+0/name = "tileset.png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 80, 80 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 1 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "tileset.png 1"
+1/texture = ExtResource( 2 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 80, 80, 80 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 2 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+
+[node name="Test level" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [ 2887.0 ],
+"_edit_vertical_guides_": [ 5290.0 ]
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="background" type="TextureRect" parent="CanvasLayer"]
+anchor_right = 1.0332
+anchor_bottom = 1.0
+margin_left = -26.0
+margin_top = -39.0
+margin_right = 8627.0
+margin_bottom = 8614.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gono1-02" type="Sprite" parent="CanvasLayer/background"]
+position = Vector2( 5610, 6844 )
+texture = ExtResource( 4 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 591, 610 )
+scale = Vector2( 0.33, 0.33 )
+gravity = 3000.0
+stomp_impulse = 1000.0
+
+[node name="Camera2D" parent="Player" index="2"]
+position = Vector2( 0, -481.818 )
+limit_right = 2690
+
+[node name="Player2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3959, 7599 )
+scale = Vector2( 0.333, 0.333 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 3 )
+cell_size = Vector2( 80, 80 )
+format = 1
+tile_data = PoolIntArray( 6225957, 1610612736, 0, 6225958, 1610612736, 0, 6225959, 1610612736, 0, 6225960, 1610612736, 0, 6225961, 1610612736, 0, 6225962, 1610612736, 0, 6225963, 1610612736, 0, 6225964, 1610612736, 0, 6225965, 1610612736, 0, 6225966, 1610612736, 0, 6225967, 1610612736, 0, 6225968, 1610612736, 0, 6225969, 1610612736, 0, 6225970, 1610612736, 0, 6225971, 1610612736, 0, 6225972, 1610612736, 0, 6225973, 1610612736, 0, 6225974, 1610612736, 0, 6225975, 1610612736, 0, 6225976, 1610612736, 0, 6225977, 1610612736, 0, 6225978, 1610612736, 0, 6225979, 1610612736, 0, 6225980, 1610612736, 0, 6225981, 1610612736, 0, 6225982, 1610612736, 0, 6225983, 1610612736, 0, 6225984, 1610612736, 0, 6225985, 1610612736, 0, 6225986, 1610612736, 0, 6225987, 1610612736, 0, 6225988, 1610612736, 0, 6225989, 1610612736, 0, 6225990, 1610612736, 0, 6225991, 1610612736, 0, 6225992, 1610612736, 0, 6225993, 1610612736, 0, 6225994, 1610612736, 0, 6225995, 1610612736, 0, 6225996, 1610612736, 0, 6225997, 1610612736, 0, 6225998, 1610612736, 0, 6225999, 1610612736, 0, 6226000, 1610612736, 0, 6226001, 1610612736, 0, 6226002, 1610612736, 0, 6226003, 1610612736, 0, 6226004, 1610612736, 0, 6226005, 1610612736, 0, 6226006, 1610612736, 0, 6226007, 1610612736, 0, 6226008, 1610612736, 0, 6226009, 1610612736, 0, 6226010, 1610612736, 0, 6226011, 1610612736, 0, 6226012, 1610612736, 0, 6226013, 1610612736, 0, 6226014, 1610612736, 0, 6226015, 1610612736, 0, 6226016, 1610612736, 0, 6226017, 1610612736, 0, 6226018, 1610612736, 0, 6226019, 1610612736, 0, 6226020, 1610612736, 0, 6226021, 1610612736, 0, 6226022, 1610612736, 0, 6226023, 1610612736, 0, 6226024, 1610612736, 0, 6226025, 1610612736, 0 )
+
+[editable path="Player"]
