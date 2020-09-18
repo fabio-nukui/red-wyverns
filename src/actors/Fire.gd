@@ -1,5 +1,25 @@
 extends KinematicBody2D
 
+export var cycle_speed: = 5.0
+export var displacement: = 100.0
+var _height: = 0.0
+var _angle: = 0.0
+
+
+func _ready():
+	set_process(true)
+	_height = position.y
+
+
+func _physics_process(delta: float) -> void:
+	   _angle += cycleSpeed * delta
+
+#		var offset = sin(_angle) * displacement
+		var pos = _centre + offset
+		move(pos) 
+		_velocity = move_and_slide(_velocity)
+
+
 func _ready() -> void:
 	set_physics_process(false)
 
