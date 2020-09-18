@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sair.gd" type="Script" id=1]
+[ext_resource path="res://Start2.gd" type="Script" id=2]
+
+[node name="Menu" type="Node2D"]
+
+[node name="Close2" type="Button" parent="."]
+margin_left = 24.2038
+margin_top = 456.876
+margin_right = 506.204
+margin_bottom = 572.876
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Close2"]
+
+[node name="Label" type="Label" parent="Close2/Sprite"]
+margin_left = 107.266
+margin_top = 39.8045
+margin_right = 341.266
+margin_bottom = 78.8045
+text = "Close
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start" type="Button" parent="."]
+margin_left = 24.2038
+margin_top = 242.04
+margin_right = 506.204
+margin_bottom = 358.04
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Start"]
+
+[node name="Label" type="Label" parent="Start/Sprite"]
+margin_left = 130.837
+margin_top = 33.6195
+margin_right = 364.837
+margin_bottom = 72.6195
+text = "Start
+
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="mouse_entered" from="Close2" to="Close2" method="_on_Start_mouse_entered"]
+[connection signal="mouse_exited" from="Close2" to="Close2" method="_on_Start_mouse_exited"]
+[connection signal="pressed" from="Close2" to="Close2" method="_on_Start_pressed"]
+[connection signal="mouse_entered" from="Start" to="Start" method="_on_Start_mouse_entered"]
+[connection signal="mouse_exited" from="Start" to="Start" method="_on_Start_mouse_exited"]
+[connection signal="pressed" from="Start" to="Start" method="_on_Start_pressed"]
