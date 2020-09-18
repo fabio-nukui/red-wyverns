@@ -39,9 +39,9 @@ __meta__ = {
 anchor_left = 0.000163475
 anchor_right = 1.03336
 anchor_bottom = 1.0
-margin_left = 1500.39
+margin_left = 1501.72
 margin_top = 4442.42
-margin_right = 9718.39
+margin_right = 9719.72
 margin_bottom = 9249.42
 texture = ExtResource( 4 )
 __meta__ = {
@@ -53,6 +53,7 @@ layer = -100
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1827.33, 3770.78 )
+speed = Vector2( 800, 1000 )
 gravity = 3000.0
 stomp_impulse = 1000.0
 
