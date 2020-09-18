@@ -1,6 +1,7 @@
 extends Actor
 
 export var stomp_impulse: = 1000.0
+export var is_gravity_enabled: = true
 
 
 func _on_EnemyDetector_area_entered(area: Area2D) -> void:
@@ -15,7 +16,10 @@ func _physics_process(delta: float) -> void:
 	var is_jump_interrupted: = Input.is_action_just_released("jump") and _velocity.y < 0.0
 	var direction: = get_direction()
 
-	_velocity.y += gravity * delta
+	if Input.is_action_just_pressed("flip_gravity"):
+		is_gravity_enabled = not is_gravity_enabled
+	if is_gravity_enabled:
+		_velocity.y += gravity * delta
 	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
 	_velocity = move_and_slide(_velocity, Vector2.UP)
 
