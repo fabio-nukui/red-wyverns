@@ -10,16 +10,14 @@ var _bomb_count = 5
 var hammer = preload("res://src/actors/Hammer.tscn")
 var rocket = preload("res://src/actors/Rocket.tscn")
 var bomb = preload("res://src/actors/Bomb.tscn")
-var player
 
 func _ready():
-	player = get_node("../Player")
 	$Timer.wait_time = 1.0
 	randomize()
 
 func _on_Timer_timeout():
 	state_machine()
-	if !player:
+	if !Global.player:
 		return
 
 	if _state == 1:
@@ -35,7 +33,7 @@ func _on_Timer_timeout():
 	if _state == 3:
 		var b = bomb.instance()
 		add_child(b)
-		var x = player.global_position.x
+		var x = Global.player.global_position.x
 		b.global_position = Vector2(x - 100, 1300)
 		$Timer.wait_time = rand_range(4.0, 5.0)
 

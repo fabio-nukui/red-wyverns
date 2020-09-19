@@ -1,16 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/actors/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/intro-18.png" type="Texture" id=2]
 [ext_resource path="res://assets/background.png" type="Texture" id=3]
 [ext_resource path="res://src/levels/fireStage.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/scenes/Portal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/levels/dodgeStage.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/levels/baseLevel.gd" type="Script" id=7]
 
 [node name="baseLevel" type="Node2D"]
-__meta__ = {
-"_edit_horizontal_guides_": [ 2887.0, 4257.79, 3770.5 ],
-"_edit_vertical_guides_": [ 4264.0 ]
-}
+script = ExtResource( 7 )
 
 [node name="background" type="TextureRect" parent="."]
 anchor_right = 1.0332
@@ -39,8 +38,11 @@ __meta__ = {
 [node name="fireStage" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1312.08, 2533.32 )
 
+[node name="dogeStage" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1552.61, 1253.02 )
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1622.61, 3684.02 )
+position = Vector2( -5.20813, -10.0682 )
 speed = Vector2( 800, 1200 )
 gravity = 3000.0
 stomp_impulse = 1000.0
@@ -50,7 +52,5 @@ position = Vector2( 4111.11, 3488.47 )
 collision_mask = 0
 next_scene_path = "res://src/levels/baseLevel.tscn"
 player_spawn_location = Vector2( 4100, 2240 )
-
-[node name="platformStage" type="Node" parent="."]
 
 [editable path="Player"]
