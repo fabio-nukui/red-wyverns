@@ -20,5 +20,5 @@ func _on_Start_pressed():
 	$Sprite.modulate.r = 0.5
 	$Sprite.modulate.g = 0.5
 	$Sprite.modulate.b = 0.5
-	get_tree().change_scene("res://src/levels/fireStage.tscn")
+	get_tree().change_scene("res://src/levels/baseLevel.tscn")
 	pass # Replace with function body.

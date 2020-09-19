@@ -1,15 +1,15 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://src/menus/Start.gd" type="Script" id=1]
-[ext_resource path="res://src/menus/Sair.gd" type="Script" id=2]
+[ext_resource path="res://src/menus/Quit.gd" type="Script" id=2]
 
 [node name="Menu" type="Node2D"]
 
 [node name="Close2" type="Button" parent="."]
 margin_left = 24.2038
-margin_top = 456.876
+margin_top = 457.876
 margin_right = 506.204
-margin_bottom = 572.876
+margin_bottom = 573.876
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -32,9 +32,9 @@ __meta__ = {
 
 [node name="Start" type="Button" parent="."]
 margin_left = 24.2038
-margin_top = 242.04
+margin_top = 241.04
 margin_right = 506.204
-margin_bottom = 358.04
+margin_bottom = 357.04
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -55,9 +55,9 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="mouse_entered" from="Close2" to="Close2" method="_on_Start_mouse_entered"]
-[connection signal="mouse_exited" from="Close2" to="Close2" method="_on_Start_mouse_exited"]
-[connection signal="pressed" from="Close2" to="Close2" method="_on_Start_pressed"]
+[connection signal="mouse_entered" from="Close2" to="Close2" method="_on_Quit_mouse_entered"]
+[connection signal="mouse_exited" from="Close2" to="Close2" method="_on_Quit_mouse_exited"]
+[connection signal="pressed" from="Close2" to="Close2" method="_on_Quit_pressed"]
 [connection signal="mouse_entered" from="Start" to="Start" method="_on_Start_mouse_entered"]
 [connection signal="mouse_exited" from="Start" to="Start" method="_on_Start_mouse_exited"]
 [connection signal="pressed" from="Start" to="Start" method="_on_Start_pressed"]

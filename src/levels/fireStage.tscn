@@ -1,71 +1,66 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://src/actors/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/intro-18.png" type="Texture" id=2]
 [ext_resource path="res://assets/background.png" type="Texture" id=3]
 [ext_resource path="res://assets/fireStageBG.png" type="Texture" id=4]
+[ext_resource path="res://src/actors/Fire.tscn" type="PackedScene" id=5]
 
-[node name="Test level" type="Node2D"]
-__meta__ = {
-"_edit_horizontal_guides_": [ 2887.0, 4257.79, 3770.5 ],
-"_edit_vertical_guides_": [ 4264.0 ]
-}
+[node name="fireStage" type="Node2D"]
 
-[node name="background" type="TextureRect" parent="."]
-anchor_right = 1.0332
-anchor_bottom = 1.0
-margin_left = -32.0
-margin_top = -32.0
-margin_right = 8621.0
-margin_bottom = 8621.0
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+margin_left = -1342.73
+margin_top = -2565.64
+margin_right = 7310.27
+margin_bottom = 6087.36
 rect_scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="telephone" type="TextureRect" parent="background"]
-margin_left = -21.8046
-margin_top = 5922.1
-margin_right = 4122.2
-margin_bottom = 8607.1
-rect_scale = Vector2( 0.78, 0.78 )
-texture = ExtResource( 2 )
+[node name="stageArea" type="ReferenceRect" parent="."]
+margin_left = -1.37149
+margin_top = 2.23996
+margin_right = 2904.63
+margin_bottom = 1675.24
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="fireStageBG" type="TextureRect" parent="background"]
-anchor_left = 0.000163475
-anchor_right = 1.03336
-anchor_bottom = 1.0
-margin_left = 1500.39
-margin_top = 4442.42
-margin_right = 9718.39
-margin_bottom = 9249.42
+[node name="Fire" parent="stageArea" instance=ExtResource( 5 )]
+position = Vector2( 1171.66, 1312.41 )
+rotation_speed = -3.0
+radius = 50.0
+
+[node name="Fire3" parent="stageArea" instance=ExtResource( 5 )]
+position = Vector2( 1616.88, 730.534 )
+rotation = -3.14159
+scale = Vector2( 0.45, 0.45 )
+rotation_speed = -5.0
+y_excentricity = 1
+
+[node name="Fire2" parent="stageArea" instance=ExtResource( 5 )]
+position = Vector2( 2163.92, 1256.29 )
+radius = 80.0
+y_excentricity = 2
+
+[node name="fireStageBG" type="TextureRect" parent="stageArea"]
+anchor_right = 0.000163475
+margin_left = -589.813
+margin_top = -350.855
+margin_right = 7628.19
+margin_bottom = 4456.14
+rect_scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = -100
-
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1827.33, 3770.78 )
-gravity = 3000.0
-stomp_impulse = 1000.0
-
-[node name="Camera2D" parent="Player" index="2"]
-position = Vector2( 25.4561, -239.987 )
-limit_right = 4260
-limit_bottom = 4260
-
-[node name="levelBoundingBox" type="StaticBody2D" parent="."]
+[node name="levelBoundingBox" type="StaticBody2D" parent="stageArea/fireStageBG"]
 visible = false
+position = Vector2( 672.665, 440.671 )
+scale = Vector2( 2, 2 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="levelBoundingBox"]
-position = Vector2( 2.66968, 2.66968 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="stageArea/fireStageBG/levelBoundingBox"]
+position = Vector2( -1053.99, -2408.79 )
 polygon = PoolVector2Array( 1669.42, 3221.68, 1474.45, 3775.42, 4200.12, 3775.49, 4194.76, 2577.47, 4264.06, 2576.06, 4264.41, 4266, 1268.05, 4262.4, 1248.3, 2870.8, 3924.68, 2603.69, 3922.16, 3117.42, 1396.95, 3134.35, 1426.57, 3308.93 )
-
-[editable path="Player"]

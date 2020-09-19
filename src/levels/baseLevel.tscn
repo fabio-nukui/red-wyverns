@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/actors/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/intro-18.png" type="Texture" id=2]
+[ext_resource path="res://assets/background.png" type="Texture" id=3]
+[ext_resource path="res://src/levels/fireStage.tscn" type="PackedScene" id=4]
+
+[node name="baseLevel" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [ 2887.0, 4257.79, 3770.5 ],
+"_edit_vertical_guides_": [ 4264.0 ]
+}
+
+[node name="background" type="TextureRect" parent="."]
+anchor_right = 1.0332
+anchor_bottom = 1.0
+margin_left = -32.0
+margin_top = -32.0
+margin_right = 8621.0
+margin_bottom = 8621.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="telephone" type="TextureRect" parent="background"]
+margin_left = -26.5614
+margin_top = 5922.1
+margin_right = 4117.44
+margin_bottom = 8607.1
+rect_scale = Vector2( 0.78, 0.78 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fireStage" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1312.08, 2533.32 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1827.33, 3770.78 )
+speed = Vector2( 800, 1200 )
+gravity = 3000.0
+stomp_impulse = 1000.0
+
+[editable path="Player"]
