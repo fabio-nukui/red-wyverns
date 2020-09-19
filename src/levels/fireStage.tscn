@@ -53,7 +53,6 @@ layer = -100
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1827.33, 3770.78 )
-speed = Vector2( 800, 1000 )
 gravity = 3000.0
 stomp_impulse = 1000.0
 
