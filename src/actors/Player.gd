@@ -6,6 +6,10 @@ export var is_gravity_enabled: = true
 var _jumping = false
 var _running = 0.0
 
+func _ready() -> void:
+	global_position = Global.player_initial_map_position
+
+
 func _on_EnemyDetector_area_entered(area: Area2D) -> void:
 	_velocity = calculate_stomp_velocity(_velocity, stomp_impulse)
 

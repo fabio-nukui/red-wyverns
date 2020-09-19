@@ -24,6 +24,10 @@ config/name="RedWyverns"
 run/main_scene="res://src/menus/MainMenu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://src/autoLoad/Global.gd"
+
 [input]
 
 move_left={
@@ -63,7 +67,7 @@ run={
 
 2d_physics/layer_1="player"
 2d_physics/layer_2="enemies"
-2d_physics/layer_3="coins"
+2d_physics/layer_3="portals"
 2d_physics/layer_4="world"
 
 [rendering]
