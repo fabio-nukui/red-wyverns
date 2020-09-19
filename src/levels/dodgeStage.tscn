@@ -4,19 +4,18 @@
 [ext_resource path="res://assets/intro-18.png" type="Texture" id=2]
 [ext_resource path="res://assets/background.png" type="Texture" id=3]
 [ext_resource path="res://assets/levels-12.png" type="Texture" id=4]
+[ext_resource path="res://src/actors/Spawner.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 34.2256, 906.178 )
 
-[sub_resource type="CircleShape2D" id=2]
-radius = 1360.78
-
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 173.993, 40.0205 )
 
 [node name="Test level" type="Node2D"]
 __meta__ = {
-"_edit_horizontal_guides_": [ 4257.79 ]
+"_edit_horizontal_guides_": [ 4257.79 ],
+"_edit_vertical_guides_": [ 4158.07, 3900.5 ]
 }
 
 [node name="background" type="TextureRect" parent="."]
@@ -70,25 +69,24 @@ limit_right = 4260
 limit_bottom = 4260
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
+collision_layer = 8
+collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2( 2132.41, 1800.71 )
-polygon = PoolVector2Array( -231.898, 939.345, -582.623, -551.236, 608.232, -359.929, 590.252, -297, -494.942, -466.384, -234.726, 642.36, 1797.23, 639.464, 1797.23, 732.697 )
+polygon = PoolVector2Array( -231.898, 939.345, -582.623, -551.236, -298.864, -433.425, -494.942, -466.384, -234.726, 642.36, 1797.23, 639.464, 1797.23, 732.697 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 4236.17, 1957.09 )
 shape = SubResource( 1 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 3566.76, 468.454 )
-shape = SubResource( 2 )
-
 [node name="Area2D" type="Area2D" parent="StaticBody2D"]
 position = Vector2( 3908.36, 2661.58 )
 
 [node name="Fall" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
-position = Vector2( 131.522, -89.1196 )
-shape = SubResource( 3 )
+position = Vector2( 137.516, -113.092 )
+shape = SubResource( 2 )
+
+[node name="Spawner" parent="." instance=ExtResource( 5 )]
 
 [editable path="Player"]

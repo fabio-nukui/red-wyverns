@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "Actor",
 "language": "GDScript",
 "path": "res://src/actors/Actor.gd"
+}, {
+"base": "Node2D",
+"class": "Spawner",
+"language": "GDScript",
+"path": "res://src/actors/Spawner.gd"
 } ]
 _global_script_class_icons={
-"Actor": ""
+"Actor": "",
+"Spawner": ""
 }
 
 [application]
