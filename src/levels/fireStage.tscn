@@ -1,12 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/levels/fireStage.gd" type="Script" id=1]
-[ext_resource path="res://src/music/trilha-2.ogg" type="AudioStream" id=2]
+[ext_resource path="res://assets/levels-12.png" type="Texture" id=2]
 [ext_resource path="res://assets/background.png" type="Texture" id=3]
-[ext_resource path="res://assets/fireStageBG.png" type="Texture" id=4]
-[ext_resource path="res://src/actors/Fire.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/actors/Nave.tscn" type="PackedScene" id=4]
 
-[node name="fireStage" type="Node2D"]
+[node name="plataforma" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -30,47 +29,36 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Fire" parent="stageArea" instance=ExtResource( 5 )]
-position = Vector2( 1171.66, 1312.41 )
-rotation_speed = -3.0
-radius = 50.0
+[node name="Nave" parent="stageArea" instance=ExtResource( 4 )]
+position = Vector2( 2059.05, 876.636 )
 
-[node name="Fire3" parent="stageArea" instance=ExtResource( 5 )]
-position = Vector2( 1616.88, 730.534 )
-rotation = -3.14159
-scale = Vector2( 0.45, 0.45 )
-rotation_speed = -5.0
-y_excentricity = 1
+[node name="Nave2" parent="stageArea" instance=ExtResource( 4 )]
+position = Vector2( 908.387, 850.63 )
 
-[node name="Fire2" parent="stageArea" instance=ExtResource( 5 )]
-position = Vector2( 2163.92, 1256.29 )
-radius = 80.0
-y_excentricity = 2
+[node name="Nave3" parent="stageArea" instance=ExtResource( 4 )]
+position = Vector2( 612.341, 469.624 )
 
-[node name="fireStageBG" type="TextureRect" parent="stageArea"]
+[node name="StageBG" type="TextureRect" parent="stageArea"]
 anchor_right = 0.000163475
-margin_left = -589.813
-margin_top = -350.855
-margin_right = 7628.19
-margin_bottom = 4456.14
+margin_left = -700.699
+margin_top = -392.827
+margin_right = 7517.3
+margin_bottom = 4414.17
 rect_scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 4 )
+texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="levelBoundingBox" type="StaticBody2D" parent="stageArea/fireStageBG"]
+[node name="levelBoundingBox" type="StaticBody2D" parent="stageArea/StageBG"]
 visible = false
 position = Vector2( 672.665, 440.671 )
 scale = Vector2( 2, 2 )
 
-[node name="base" type="CollisionPolygon2D" parent="stageArea/fireStageBG/levelBoundingBox"]
+[node name="base" type="CollisionPolygon2D" parent="stageArea/StageBG/levelBoundingBox"]
 position = Vector2( -1053.99, -2408.79 )
 polygon = PoolVector2Array( 1464.89, 3773.87, 4200.12, 3775.49, 4194.76, 2577.47, 4264.06, 2576.06, 4264.41, 4266, 1266.14, 4268.97 )
 
-[node name="top" type="CollisionPolygon2D" parent="stageArea/fireStageBG/levelBoundingBox"]
+[node name="top" type="CollisionPolygon2D" parent="stageArea/StageBG/levelBoundingBox"]
 position = Vector2( -1053.99, -2408.79 )
-polygon = PoolVector2Array( 1349.86, 3325.8, 1273.53, 2872.33, 3924.68, 2603.69, 3922.16, 3117.42, 1396.95, 3134.35, 1426.57, 3308.93 )
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 2 )
+polygon = PoolVector2Array( 1617.24, 3319.05, 1572.35, 3103.54, 1482.55, 2708.43, 2569.09, 2861.09, 2982.16, 3067.62, 3197.67, 3139.46, 3709.51, 3139.46, 4077.68, 3004.76, 4068.7, 3911.71, 3736.45, 3830.89, 2173.99, 3830.89, 1796.84, 3821.91, 1823.78, 4082.32, 1662.14, 3480.69 )

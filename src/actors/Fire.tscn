@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/actors/Fire.gd" type="Script" id=1]
 [ext_resource path="res://assets/fireStageFire01.png" type="Texture" id=2]
+[ext_resource path="res://music/lanca-chamas.ogg" type="AudioStream" id=3]
 
 [node name="Fire" type="KinematicBody2D"]
 position = Vector2( 82.0484, 85.4893 )
@@ -22,3 +23,6 @@ physics_process_parent = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -5.26497, -920.573, -117.638, -750.14, -175.697, -459.843, -170.079, 274.327, -123.257, 830.574, 112.727, 828.701, 176.405, -160.182, 138.842, -617.34 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
