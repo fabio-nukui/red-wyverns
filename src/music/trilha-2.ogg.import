@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/trilha-2.ogg-bf08124ee2b74ebadb578719b0a905ca.oggstr"
+
+[deps]
+
+source_file="res://src/music/trilha-2.ogg"
+dest_files=[ "res://.import/trilha-2.ogg-bf08124ee2b74ebadb578719b0a905ca.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
