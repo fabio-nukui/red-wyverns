@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/levels-17.png" type="Texture" id=1]
+[ext_resource path="res://src/actors/Nave.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/background.png" type="Texture" id=3]
+
+[node name="plataforma" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+margin_left = -1342.73
+margin_top = -2565.64
+margin_right = 7310.27
+margin_bottom = 6087.36
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="stageArea" type="ReferenceRect" parent="."]
+margin_left = -1.37149
+margin_top = 2.23996
+margin_right = 2904.63
+margin_bottom = 1675.24
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Nave" parent="stageArea" instance=ExtResource( 2 )]
+position = Vector2( 1005.01, 864.609 )
+script = null
+
+[node name="gramaStageBG" type="TextureRect" parent="stageArea"]
+anchor_right = 0.000163475
+margin_left = -853.516
+margin_top = -230.99
+margin_right = 7364.49
+margin_bottom = 4576.01
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="levelBoundingBox" type="StaticBody2D" parent="stageArea/gramaStageBG"]
+visible = false
+position = Vector2( 672.665, 440.671 )
+scale = Vector2( 2, 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="stageArea/gramaStageBG/levelBoundingBox"]
+position = Vector2( -1053.99, -2408.79 )
+polygon = PoolVector2Array( 1607.47, 4252.89, 1607.47, 3761.67, 3380.14, 3793.7, 3166.56, 2661.76, 3433.53, 3921.85, 3444.21, 4103.38, 1564.75, 4263.56, 1596.79, 3708.27, 1617.41, 2414.59, 3179.88, 2666.02, 3209.28, 2950.08, 3422.85, 3825.74, 3476.24, 4103.38 )

@@ -16,3 +16,4 @@ func _process(delta):
 	_angle += rotation_speed * delta
 	var offset = Vector2(sin(_angle), cos(_angle) * y_excentricity) * radius
 	position = _centre + offset
+	$AudioStreamPlayer.play()
