@@ -40,15 +40,17 @@ __meta__ = {
 position = Vector2( 1312.08, 2533.32 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1594.04, 3711 )
+position = Vector2( 1622.61, 3684.02 )
 speed = Vector2( 800, 1200 )
 gravity = 3000.0
 stomp_impulse = 1000.0
 
 [node name="Portal" parent="." instance=ExtResource( 5 )]
-position = Vector2( 4112.89, 3492.03 )
+position = Vector2( 4111.11, 3488.47 )
 collision_mask = 0
 next_scene_path = "res://src/levels/baseLevel.tscn"
 player_spawn_location = Vector2( 4100, 2240 )
+
+[node name="platformStage" type="Node" parent="."]
 
 [editable path="Player"]
