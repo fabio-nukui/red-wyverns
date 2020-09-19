@@ -25,17 +25,19 @@ func _on_Timer_timeout():
 		add_child(h)
 		h.global_position = Vector2(1900, 2375)
 		$Timer.wait_time = rand_range(0.5, 2.0)
-	if _state == 2:
+	elif _state == 2:
 		var r = rocket.instance()
 		add_child(r)
 		r.global_position = Vector2(4200, 2100)
 		$Timer.wait_time = rand_range(2.0, 4.0)
-	if _state == 3:
+	elif _state == 3:
 		var b = bomb.instance()
 		add_child(b)
 		var x = Global.player.global_position.x
 		b.global_position = Vector2(x - 100, 1300)
 		$Timer.wait_time = rand_range(4.0, 5.0)
+	elif _state == 4:
+		Global.startStagePlatform = true
 
 func state_machine():
 	if _init_count == 0:
