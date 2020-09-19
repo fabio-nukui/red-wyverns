@@ -64,9 +64,13 @@ visible = false
 position = Vector2( 672.665, 440.671 )
 scale = Vector2( 2, 2 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="stageArea/fireStageBG/levelBoundingBox"]
+[node name="base" type="CollisionPolygon2D" parent="stageArea/fireStageBG/levelBoundingBox"]
 position = Vector2( -1053.99, -2408.79 )
-polygon = PoolVector2Array( 1669.42, 3221.68, 1474.45, 3775.42, 4200.12, 3775.49, 4194.76, 2577.47, 4264.06, 2576.06, 4264.41, 4266, 1268.05, 4262.4, 1248.3, 2870.8, 3924.68, 2603.69, 3922.16, 3117.42, 1396.95, 3134.35, 1426.57, 3308.93 )
+polygon = PoolVector2Array( 1464.89, 3773.87, 4200.12, 3775.49, 4194.76, 2577.47, 4264.06, 2576.06, 4264.41, 4266, 1266.14, 4268.97 )
+
+[node name="top" type="CollisionPolygon2D" parent="stageArea/fireStageBG/levelBoundingBox"]
+position = Vector2( -1053.99, -2408.79 )
+polygon = PoolVector2Array( 1349.86, 3325.8, 1273.53, 2872.33, 3924.68, 2603.69, 3922.16, 3117.42, 1396.95, 3134.35, 1426.57, 3308.93 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )

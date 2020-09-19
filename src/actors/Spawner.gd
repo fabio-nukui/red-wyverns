@@ -1,7 +1,7 @@
 extends Node2D
 class_name Spawner
 
-var _state = 0
+var _state = -1
 var _init_count = 2
 var _hammer_count = 5
 var _rocket_count = 5
@@ -50,7 +50,9 @@ func state_machine():
 	if _bomb_count == 0:
 		_state = 4
 		_bomb_count = -1
-	if _state == 0:
+	if _state == -1 and Global.startStageDodge:
+		_state = 0
+	elif _state == 0:
 		_init_count -= 1
 	elif _state == 1:
 		_hammer_count -= 1

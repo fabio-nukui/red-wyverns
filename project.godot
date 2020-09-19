@@ -33,6 +33,12 @@ run/main_scene="res://src/menus/MainMenu.tscn"
 
 Global="*res://src/autoLoad/Global.gd"
 
+[display]
+
+window/size/width=865
+window/size/height=865
+window/size/resizable=false
+
 [input]
 
 move_left={
